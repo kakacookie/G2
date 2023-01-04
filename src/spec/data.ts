@@ -28,6 +28,7 @@ export type DataTransform =
   | FilterDataTransform
   | MapTransform
   | SliceTransform
+  | SampleTransform
   | CustomTransform;
 
 export type DataTransformTypes =
@@ -40,6 +41,7 @@ export type DataTransformTypes =
   | 'filter'
   | 'map'
   | 'slice'
+  | 'sample'
   | 'custom'
   | DataComponent;
 
@@ -130,6 +132,34 @@ export type JoinTransform = {
    * When not matched, use `unknown` instead.
    */
   unknown?: any;
+};
+
+export type SampleTransform = {
+  type?: 'sample';
+  /**
+   * Sample by which field.
+   */
+  field: string;
+  /**
+   * Sample strategy. Default is 'median'.
+   */
+  strategy?:
+    | 'lttb'
+    | 'median'
+    | 'max'
+    | 'min'
+    | 'first'
+    | 'last'
+    | ((I: number[], V: number[]) => number);
+  /**
+   * The thresholds of sample, when data size great then thresholds, sample will take effect.
+   * Default is 2000.
+   */
+  thresholds?: number;
+  /**
+   * Group data by fields, for series data.
+   */
+  groupBy?: string | string[];
 };
 
 export type CustomTransform = {

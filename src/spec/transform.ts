@@ -48,7 +48,6 @@ export type TransformTypes =
   | 'sortY'
   | 'flexX'
   | 'pack'
-  | 'sample'
   | 'filter'
   | TransformComponent;
 
@@ -250,12 +249,6 @@ export type BinTransform = {
   type?: 'bin';
   thresholdsX?: number;
   thresholdsY?: number;
-} & { [key in ChannelTypes]?: Reducer };
-
-export type SampleTransform = {
-  type?: 'sample';
-  groupBy?: string | string[];
-  thresholds?: number;
 } & { [key in ChannelTypes]?: Reducer };
 
 export type FilterTransform = {
