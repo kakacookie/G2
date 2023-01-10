@@ -242,7 +242,6 @@ import {
   BinX,
   MaybeTitle,
   MaybeTooltip,
-  Sample,
   Filter as FilterTransform,
 } from '../../../src/transform';
 import {
@@ -333,7 +332,6 @@ describe('stdlib', () => {
       'transform.maybeFunctionAttribute': MaybeFunctionAttribute,
       'transform.maybeGradient': MaybeGradient,
       'transform.pack': Pack,
-      'transform.sample': Sample,
       'transform.filter': FilterTransform,
       'coordinate.cartesian': Cartesian,
       'coordinate.polar': Polar,

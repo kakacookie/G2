@@ -38,7 +38,6 @@ export { FlexX } from './flexX';
 export { Pack } from './pack';
 export { BinX } from './binX';
 export { Bin } from './bin';
-export { Sample } from './sample';
 export { Filter } from './filter';
 
 export type { MaybeZeroY1Options } from './maybeZeroY1';
